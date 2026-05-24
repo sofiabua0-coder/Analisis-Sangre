@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende a Leer Análisis de Sangre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div>
+                    <h1>🩸 Análisis de Sangre</h1>
+                    <p>Aprende a interpretar tus resultados de laboratorio</p>
+                </div>
+                <button id="themeToggle" class="theme-toggle">Modo oscuro</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-btn active" data-section="analisis">Análisis</button>
+            <button class="nav-btn" data-section="valores">Valores Normales</button>
+            <button class="nav-btn" data-section="casos">Casos Clínicos</button>
+            <button class="nav-btn" data-section="calculadora">Calculadora</button>
+            <button class="nav-btn" data-section="glosario">Glosario</button>
+            <button class="nav-btn" data-section="guia">Guía de Lectura</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            
+            <!-- Sección de Análisis -->
+            <section id="analisis" class="section active">
+                <h2>Análisis Completos de Sangre</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Busca un análisis (ej: Hemoglobina)...">
+                </div>
+                <div class="analisis-grid" id="analisisGrid">
+                    <!-- Se llenará con JavaScript -->
+                </div>
+            </section>
+
+            <!-- Sección de Valores Normales -->
+            <section id="valores" class="section">
+                <h2>Valores de Referencia</h2>
+                <div class="valores-container">
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter="todos">Todos</button>
+                        <button class="filter-btn" data-filter="completa">Hemograma</button>
+                        <button class="filter-btn" data-filter="bioquimica">Bioquímica</button>
+                        <button class="filter-btn" data-filter="coagulacion">Coagulación</button>
+                    </div>
+                    <div class="valores-table" id="valoresTable">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Casos Clínicos -->
+            <section id="casos" class="section">
+                <h2>Casos Clínicos Reales</h2>
+                <div class="casos-container">
+                    <div class="caso-selector" id="casoSelector">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                    <div id="casoDetalle" class="caso-detalle">
+                        <!-- Se llenará con JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Calculadora -->
+            <section id="calculadora" class="section">
+                <h2>Calculadora Interactiva</h2>
+                <div class="calculadora-grid">
+                    <div class="calculadora-panel">
+                        <p>Selecciona un análisis, ingresa tu resultado y revisa si el valor está dentro del rango esperado.</p>
+                        <div class="calc-field">
+                            <label for="calcAnalisis">Análisis</label>
+                            <select id="calcAnalisis"></select>
+                        </div>
+                        <div class="calc-field">
+                            <label for="calcSexo">Sexo / Grupo</label>
+                            <select id="calcSexo">
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer">Mujer</option>
+                                <option value="adulto">Adulto</option>
+                            </select>
+                        </div>
+                        <div class="calc-field">
+                            <label for="calcValor">Valor</label>
+                            <input type="number" id="calcValor" placeholder="Ej. 13.2" step="any">
+                        </div>
+                        <button id="calcBtn" class="btn-detalles">Interpretar valor</button>
+                        <div id="calcResultado" class="calc-result"></div>
+                    </div>
+                    <div class="calculadora-panel calculadora-info">
+                        <h3>Consejos rápidos</h3>
+                        <ul class="steps-list">
+                            <li>Elige la prueba que quieres interpretar.</li>
+                            <li>Ingresa el número exacto de tu análisis.</li>
+                            <li>Compara con el rango de referencia mostrado.</li>
+                            <li>Los valores fuera del rango pueden requerir evaluación médica.</li>
+                        </ul>
+                        <p>Esta calculadora es educativa. Usa tus resultados reales para aprender, pero confía en tu médico para el diagnóstico final.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Glosario -->
+            <section id="glosario" class="section">
+                <h2>Glosario de Términos</h2>
+                <div class="glosario-grid" id="glosarioGrid"></div>
+            </section>
+
+            <!-- Sección de Guía -->
+            <section id="guia" class="section">
+                <h2>Guía de Lectura</h2>
+                <div class="guia-content">
+                    <div class="guia-card">
+                        <h3>📋 ¿Cómo leer un análisis?</h3>
+                        <p>Los análisis de sangre muestran valores de diferentes componentes. Cada componente tiene valores de referencia (normales) basados en edad, sexo y otros factores.</p>
+                    </div>
+                    <div class="guia-card">
+                        <h3>🟢 Valores Normales</h3>
+                        <p>Cuando un valor está dentro del rango de referencia, generalmente indica que ese componente está en niveles saludables.</p>
+                    </div>
+                    <div class="guia-card">
+                        <h3>🔴 Valores Altos</h3>
+                        <p>Cuando un valor supera el límite superior puede indicar infección, inflamación, enfermedad o desequilibrio. Requiere evaluación médica.</p>
+                    </div>
+                    <div class="guia-card">
+                        <h3>🔵 Valores Bajos</h3>
+                        <p>Cuando un valor está por debajo del límite inferior puede indicar deficiencia, anemia, malnutrición u otros problemas. Consulta con tu médico.</p>
+                    </div>
+                    <div class="guia-card">
+                        <h3>⚕️ Contexto Clínico</h3>
+                        <p>Los valores deben interpretarse junto con los síntomas del paciente, historial médico y otros análisis. Un valor anormal no siempre significa enfermedad grave.</p>
+                    </div>
+                    <div class="guia-card">
+                        <h3>📍 Variabilidad</h3>
+                        <p>Los laboratorios pueden tener rangos de referencia ligeramente diferentes. Siempre revisa el rango específico de tu laboratorio.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚠️ Esta información es educativa. Consulta siempre con un profesional médico para diagnósticos.</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
